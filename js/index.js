@@ -10,5 +10,4 @@ if(seleccionarProductos > 0 && seleccionarProductos < 5) {
             console.Log("el total es de" + total) 
             break;
     }
-    let seleccionarProductos = Number(prompt("1-buzo $3000 2-remera $1500 3-jeans $2500 4-zapatillas $6000"))
 }
