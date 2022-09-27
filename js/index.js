@@ -26,34 +26,38 @@ const productos = [
 
 
 class Productos {
-    constructor(id, nombre, precio) {
+    constructor(id, nombre, precio, img) {
         this.id = id
-        this.nombre = parseInt(nombre)
+        this.nombre = nombre
         this.precio = parseInt(precio)
+        this.img = img
     }
 }
 
-products.push(new Productos("1", "Buzo Nike Sportswear", 5000)),
-    (new Productos("2", "Buzo Nike Air", 7000)),
-    (new Productos("3", "Buzo con capucha Nike Sportswear Essentials", 7000)),
-    (new Productos("4", "Campera Nike Sportswear Windrunner", 15000)),
-    (new Productos("5", "Campera Nike Tech Fleece", 10000)),
-    (new Productos("6", "Campera Nike Sportswear", 8000)),
-    (new Productos("7", "Remera Nike Roja", 4000)),
-    (new Productos("8", "Remera Nike Sportswear", 4000)),
-    (new Productos("9", "Remera Nike Nsw Tee", 4000))
+products.push(new Productos("1", "Buzo Nike Sportswear", 5000,"img/product-1.jpg" )),
+    (new Productos("2", "Buzo Nike Air", 7000, "img/product-2.jpg")),
+    (new Productos("3", "Buzo con capucha Nike Sportswear Essentials", 7000,"img/product-3.jpg" )),
+    (new Productos("4", "Campera Nike Sportswear Windrunner", 15000,"img/product-4.jpg" )),
+    (new Productos("5", "Campera Nike Tech Fleece", 10000,"img/product-5.jpg" )),
+    (new Productos("6", "Campera Nike Sportswear", 8000,"img/product-6.jpg" )),
+    (new Productos("7", "Remera Nike Roja", 4000, "img/product-7.jpg")),
+    (new Productos("8", "Remera Nike Sportswear", 4000,"img/product-8.jpg" )),
+    (new Productos("9", "Remera Nike Nsw Tee", 4000,"img/product-9.jpg" ))
 
-const contenedor = document.getElementById("productos")
+    console.log(products)
+    products.push
 
-function contenedor(productos){
+const contenedor = document.getElementById("page-content")
+
+/*function contenedor(productos){
     let resultado= contenedor.find (productos => productos)
-    console.Log(resultado)
+    console.log(resultado)
     }
-
+*/
 function renderProductos(array) {
     array.forEach(producto => {
         contenedor.innerHTML += `
-                  <div class = "producto">
+                  <div class = "producto-container">
                        <h3>${producto.nombre}</h3>
                        <img src=${producto.img} alt=${producto.nombre}>
                        <button class="button-add">Agregar</button>
@@ -67,6 +71,7 @@ renderProductos(productos)
 
 function agregarAlcarrito(id) {
     let resultado = productos.find(productos => productos.id == id)
-    console.Log(resultado)
+    console.log(resultado)
+    console.log(carrito)
 }
 
