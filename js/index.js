@@ -84,5 +84,11 @@ function renderCarrito(array, destino){
 function agregarAlcarrito(id) {
     let resultado = products.find(productos => productos.id == id)
     carrito.push(resultado)
+    renderCarrito(carrito, carritoDiv)
 }
 
+const carritoDiv = document.querySelector("#carrito")
+
+window.addEventListener("DOMContentLoaded", () => renderProductos(products));
+
+LocaLStorage.setItem("carrito", JSON.stringify(carrito))
