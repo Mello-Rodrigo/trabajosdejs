@@ -118,7 +118,7 @@ function cargarServicios(array){
                 <img class="img" src="${image}" alt="${name}">
                 <h5>${id} . ${name} </h5>
                 <h6>${price}</h6>
-                <button class="learn  more" id="${id}" onclick=agregarAlCarrito
+                <button class="learn-more" id="${id}" onclick=agregarAlCarrito
            </div>`
 }
 
@@ -128,7 +128,7 @@ const cargarContenido = async ()=> {
         const data = await response.json()
             services = data
             services.forEach(serv => contenidoHTML += cargarServicios(serv))
-    } catch (errror){
+    } catch (errror) {
         contenidoHTML += mostrarError()
     } finally {
         container.innerHTML = contenidoHTML
@@ -136,6 +136,11 @@ const cargarContenido = async ()=> {
 }
 
 cargarContenido()
+
+fetch(URL, response)
+.then(data=>{return data.json()})
+.then(response=>{console.log(response)})
+.catch(error=>console.log(error))
 
 const contenedor = document.getElementById("page-content")
 
